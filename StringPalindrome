@@ -1,0 +1,27 @@
+// A simple Java program to check whether the strings are palindrome* or not. 
+
+public class question2A {
+	
+	public static void main(String args[]) {
+		String str1 = "harman";
+		String str2 = "namrah";
+		
+		Boolean ans = isPermutation(str1, str2);
+		if (ans == true) 
+			System.out.println("It is a permutation.");
+	}
+
+	static String sort(String s) {
+		char[] ch = s.toCharArray();
+		java.util.Arrays.sort(ch);
+		return new String(ch);
+	}
+	
+	static Boolean isPermutation(String s1, String s2) {
+		if(s1.length()!=s2.length()) {
+			System.out.println("Not a permutation: not equal in length!");
+			return false;
+		}
+		return sort(s1).equals(sort(s2));
+	}
+}
